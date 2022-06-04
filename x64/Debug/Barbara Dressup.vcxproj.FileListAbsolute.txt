@@ -3,3 +3,8 @@ C:\Users\Emil\Desktop\My Desk\Barbara Dressup\x64\Debug\Barbara Dressup.vcxproj.
 C:\Users\Emil\Desktop\My Desk\Barbara Dressup\x64\Debug\BarbaraDressup.MyForm.resources
 C:\Users\Emil\Desktop\My Desk\Barbara Dressup\x64\Debug\Barbara Dressup.vcxproj.GenerateResource.cache
 C:\Users\Emil\Desktop\My Desk\Barbara Dressup\x64\Debug\Game.exe
+C:\Users\Emil\Desktop\Programming-Project-Game\x64\Debug\Barbara Dressup.vcxproj.AssemblyReference.cache
+C:\Users\Emil\Desktop\Programming-Project-Game\x64\Debug\Barbara Dressup.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Emil\Desktop\Programming-Project-Game\x64\Debug\BarbaraDressup.MyForm.resources
+C:\Users\Emil\Desktop\Programming-Project-Game\x64\Debug\Barbara Dressup.vcxproj.GenerateResource.cache
+C:\Users\Emil\Desktop\Programming-Project-Game\x64\Debug\Game.exe

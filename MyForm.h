@@ -105,31 +105,39 @@ namespace BarbaraDressup {
 			// 
 			// attack
 			// 
-			this->attack->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->attack->BackColor = System::Drawing::Color::Transparent;
+			this->attack->FlatAppearance->BorderSize = 0;
+			this->attack->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->attack->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"attack.Image")));
 			this->attack->Location = System::Drawing::Point(12, 12);
 			this->attack->Name = L"attack";
-			this->attack->Size = System::Drawing::Size(325, 71);
+			this->attack->Size = System::Drawing::Size(392, 130);
 			this->attack->TabIndex = 0;
 			this->attack->Text = L"Attack";
-			this->attack->UseVisualStyleBackColor = true;
+			this->attack->UseVisualStyleBackColor = false;
 			this->attack->Click += gcnew System::EventHandler(this, &MyForm::attack_Click);
 			// 
 			// specialability
 			// 
-			this->specialability->Location = System::Drawing::Point(821, 11);
+			this->specialability->BackColor = System::Drawing::Color::Transparent;
+			this->specialability->FlatAppearance->BorderSize = 0;
+			this->specialability->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->specialability->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"specialability.Image")));
+			this->specialability->Location = System::Drawing::Point(901, 12);
 			this->specialability->Name = L"specialability";
-			this->specialability->Size = System::Drawing::Size(325, 72);
+			this->specialability->Size = System::Drawing::Size(392, 130);
 			this->specialability->TabIndex = 1;
 			this->specialability->Text = L"Special Ability";
-			this->specialability->UseVisualStyleBackColor = true;
+			this->specialability->UseVisualStyleBackColor = false;
 			this->specialability->Click += gcnew System::EventHandler(this, &MyForm::specialability_Click);
 			// 
 			// enemy
 			// 
 			this->enemy->BackColor = System::Drawing::Color::Transparent;
 			this->enemy->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->enemy->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"enemy.Image")));
 			this->enemy->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"enemy.InitialImage")));
-			this->enemy->Location = System::Drawing::Point(727, 334);
+			this->enemy->Location = System::Drawing::Point(1167, 327);
 			this->enemy->Name = L"enemy";
 			this->enemy->Size = System::Drawing::Size(515, 679);
 			this->enemy->TabIndex = 2;
@@ -140,6 +148,7 @@ namespace BarbaraDressup {
 			// 
 			this->character->BackColor = System::Drawing::Color::Transparent;
 			this->character->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->character->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"character.Image")));
 			this->character->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"character.InitialImage")));
 			this->character->Location = System::Drawing::Point(12, 282);
 			this->character->Name = L"character";
@@ -149,27 +158,35 @@ namespace BarbaraDressup {
 			// 
 			// nextchr
 			// 
-			this->nextchr->Location = System::Drawing::Point(421, 11);
+			this->nextchr->BackColor = System::Drawing::Color::Transparent;
+			this->nextchr->FlatAppearance->BorderSize = 0;
+			this->nextchr->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->nextchr->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"nextchr.Image")));
+			this->nextchr->Location = System::Drawing::Point(476, 12);
 			this->nextchr->Name = L"nextchr";
-			this->nextchr->Size = System::Drawing::Size(310, 71);
+			this->nextchr->Size = System::Drawing::Size(392, 130);
 			this->nextchr->TabIndex = 6;
 			this->nextchr->Text = L"Next Character";
-			this->nextchr->UseVisualStyleBackColor = true;
+			this->nextchr->UseVisualStyleBackColor = false;
 			this->nextchr->Click += gcnew System::EventHandler(this, &MyForm::nextchr_Click);
 			// 
 			// restart
 			// 
-			this->restart->Location = System::Drawing::Point(821, 110);
+			this->restart->BackColor = System::Drawing::Color::Transparent;
+			this->restart->FlatAppearance->BorderSize = 0;
+			this->restart->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->restart->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"restart.Image")));
+			this->restart->Location = System::Drawing::Point(1323, 12);
 			this->restart->Name = L"restart";
-			this->restart->Size = System::Drawing::Size(325, 55);
+			this->restart->Size = System::Drawing::Size(392, 130);
 			this->restart->TabIndex = 7;
 			this->restart->Text = L"Restart";
-			this->restart->UseVisualStyleBackColor = true;
+			this->restart->UseVisualStyleBackColor = false;
 			this->restart->Click += gcnew System::EventHandler(this, &MyForm::restart_Click);
 			// 
 			// characterhp
 			// 
-			this->characterhp->Location = System::Drawing::Point(12, 242);
+			this->characterhp->Location = System::Drawing::Point(86, 242);
 			this->characterhp->Name = L"characterhp";
 			this->characterhp->Size = System::Drawing::Size(571, 34);
 			this->characterhp->TabIndex = 8;
@@ -178,20 +195,18 @@ namespace BarbaraDressup {
 			// enemyhp
 			// 
 			this->enemyhp->BackColor = System::Drawing::SystemColors::Control;
-			this->enemyhp->Location = System::Drawing::Point(612, 242);
+			this->enemyhp->Location = System::Drawing::Point(1102, 242);
 			this->enemyhp->Name = L"enemyhp";
 			this->enemyhp->Size = System::Drawing::Size(571, 34);
 			this->enemyhp->TabIndex = 9;
 			this->enemyhp->Value = 100;
-			this->enemy->Image = Image::FromFile("C:\\Users\\Emil\\Desktop\\My Desk\\Barbara Dressup\\files\\enemy.png");
-			this->character->Image = Image::FromFile("C:\\Users\\Emil\\Desktop\\My Desk\\Barbara Dressup\\files\\chr1.png");
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1195, 875);
+			this->ClientSize = System::Drawing::Size(1752, 875);
 			this->Controls->Add(this->enemyhp);
 			this->Controls->Add(this->characterhp);
 			this->Controls->Add(this->restart);
