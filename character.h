@@ -9,6 +9,14 @@ using namespace System::Collections::Generic;
 ref class character
 {
 	public:
+		static int whichchar = 1;
+
+		static int invincibility = 0;
+		static int invtime = 0;
+
+		static int doubledamage = 0;
+
+		static int usedspecial = 0;
 		static int hp;
 		static int damage;
 
@@ -16,5 +24,7 @@ ref class character
 		character();
 
 		void attack();
+		void make_invincible();
+		void heal();
 };
 

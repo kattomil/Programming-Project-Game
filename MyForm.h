@@ -30,14 +30,6 @@ namespace BarbaraDressup {
 
 		character Chr;
 		enemy Ene;
-		int whichchar = 1;
-
-		int invincibility = 0;
-		int invtime = 0;
-		
-		int doubledamage = 0;
-
-		int usedspecial = 0;
 
 		int functionality = 1;
 
@@ -228,19 +220,22 @@ namespace BarbaraDressup {
 		if (functionality == 1) {
 			Chr.attack();
 
-			if (invtime == 0) {
-				invincibility = 0;
-			}
-
-			if (invincibility == 0 && invtime == 0) {
+			if (Chr.invincibility == 0 && Chr.invtime == 0) {
 				Ene.attack();
 			}
 			else {
-				invtime -= 1;
+				Chr.invtime -= 1;
+				if (Chr.invtime == 0) {
+					Chr.invincibility = 0;
+					this->specialability->BackColor = Color::Red;
+				}
 			}
-			if (doubledamage > 0) {
+			if (Chr.doubledamage > 0) {
 				Chr.attack();
-				doubledamage -= 1;
+				Chr.doubledamage -= 1;
+				if (Chr.doubledamage == 0) {
+					this->specialability->BackColor = Color::Red;
+				}
 			}
 
 			if (Ene.hp > 0) {
@@ -258,27 +253,28 @@ namespace BarbaraDressup {
 			else {
 				functionality = 0;
 				this->characterhp->Value = 0;
-				this->character->Image = Image::FromFile("C:\\Users\\Emil\\Desktop\\My Desk\\Barbara Dressup\\files\\chr" + whichchar + "dead.png");
+				this->character->Image = Image::FromFile("C:\\Users\\Emil\\Desktop\\My Desk\\Barbara Dressup\\files\\chr" + Chr.whichchar + "dead.png");
 			}
 		}
 	}
 	private: System::Void specialability_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (functionality == 1) {
-			if (usedspecial == 0) {
-				if (whichchar == 1) {
-					invincibility = 1;
-					invtime = 3;
+			if (Chr.usedspecial == 0) {
+				if (Chr.whichchar == 1) {
+					Chr.make_invincible();
+					this->specialability->BackColor = Color::Blue;
 				}
-				else if (whichchar == 2) {
-					doubledamage = 2;
+				else if (Chr.whichchar == 2) {
+					Chr.doubledamage = 2;
+					this->specialability->BackColor = Color::Blue;
 				}
-				else if (whichchar == 3) {
-					Random^ rnd = gcnew Random();
-					Chr.hp += rnd->Next(11) + 1;
+				else if (Chr.whichchar == 3) {
+					Chr.heal();
 					this->characterhp->Value = Chr.hp;
+					this->specialability->BackColor = Color::Red;
 				}
+				Chr.usedspecial = 1;
 			}
-			usedspecial = 1;
 		}
 	}
 	private: System::Void character_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -286,14 +282,14 @@ namespace BarbaraDressup {
 	}
 	private: System::Void nextchr_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (functionality == 1) {
-			if (whichchar == 3)
-				whichchar = 1;
-			else whichchar += 1;
+			if (Chr.whichchar == 3)
+				Chr.whichchar = 1;
+			else Chr.whichchar += 1;
 
-			invincibility = 0;
-			invtime = 0;
+			Chr.invincibility = 0;
+			Chr.invtime = 0;
 
-			this->character->Image = Image::FromFile("C:\\Users\\Emil\\Desktop\\My Desk\\Barbara Dressup\\files\\chr" + whichchar + ".png");
+			this->character->Image = Image::FromFile("C:\\Users\\Emil\\Desktop\\My Desk\\Barbara Dressup\\files\\chr" + Chr.whichchar + ".png");
 		}
 	}
 private: System::Void restart_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -302,13 +298,14 @@ private: System::Void restart_Click(System::Object^ sender, System::EventArgs^ e
 	this->enemyhp->Value = 100;
 	Chr.hp = 100;
 	Ene.hp = 100;
-	whichchar = 1;
+	Chr.whichchar = 1;
 	this->enemy->Image = Image::FromFile("C:\\Users\\Emil\\Desktop\\My Desk\\Barbara Dressup\\files\\enemy.png");
 	this->character->Image = Image::FromFile("C:\\Users\\Emil\\Desktop\\My Desk\\Barbara Dressup\\files\\chr1.png");
-	invincibility = 0;
-	invtime = 0;
-	doubledamage = 0;
-	usedspecial = 0;
+	this->specialability->BackColor = Color::Transparent;
+	Chr.invincibility = 0;
+	Chr.invtime = 0;
+	Chr.doubledamage = 0;
+	Chr.usedspecial = 0;
 }
 };
 }

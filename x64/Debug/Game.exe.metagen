@@ -20,10 +20,5 @@ Class BarbaraDressup.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
   Fields:
     character Chr IsByValue : Public, InitOnly
     enemy Ene IsByValue : Public, InitOnly
-    Int32 whichchar : Public
-    Int32 invincibility : Public
-    Int32 invtime : Public
-    Int32 doubledamage : Public
-    Int32 usedspecial : Public
     Int32 functionality : Public
     Int32 heal : Public
