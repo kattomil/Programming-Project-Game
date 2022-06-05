@@ -20,4 +20,7 @@ void character::make_invincible() {
 void character::heal() {
 	Random^ rnd = gcnew Random();
 	hp += rnd->Next(30) + 1;
+	if (hp > 100) {
+		hp = 100;
+	}
 }
